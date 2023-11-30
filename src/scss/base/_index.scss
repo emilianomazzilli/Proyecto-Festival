@@ -1,0 +1,10 @@
+@forward 'variables';
+@forward 'mixins';
+@forward 'normalize';
+@forward 'globales';
+
+
+
+// ! forward requiere que tengas un index.scss en tus archivos siempre, forward lo que hace es que apunta e indica hacia otro carpetas y archivos.
+// ! Import busca el index.scss y el Forward lo que hace es que llama a los demás archivos.//
+// ! Forward va solo en la carpeta Index

@@ -1,0 +1,49 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header {
+    background-color: v.$verde;
+    @include m.tablet{
+        &.fijo {
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            box-shadow: .1rem .2rem .1rem #333;
+        }      
+    }
+    h1 {
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet{       
+            margin: 0;
+        }
+    }
+    .contenido-header {
+        padding: 2rem;
+        @include m.tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+.navegación-principal{
+    @include m.tablet {   //*@include en SCSS es una forma de insertar el contenido de un mixin
+        display: flex;
+        gap: 2rem;
+    }
+   
+    a{
+        display: block;
+        text-align: center;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+
+        &:hover{ //! & esto es un ampersand, lo que hace es que le quita el espacio en el css, uniendo el selector con el de arriba.
+            color: v.$amarillo;
+        }
+    }
+}

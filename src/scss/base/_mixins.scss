@@ -1,0 +1,53 @@
+@use 'variables' as v;
+
+/*
+//*! Creando mixins inteligentes
+//*! Para hacer eso tenemos que usar el mixin como si fuera una variable
+//*! Un mixin es como una función, le puedo pasar parámetros y le puedes pasar argumentos para hacerlos mas inteligentes y también mas reutilizables.
+
+*@mixin heading($color: blue , $border-radius: false) {  //! Lo que hacemos aca es crear la variable Color y en el Css le agregamos el color que queremos y si no le agregamos un color en css, el blue que puse es el color default.
+    *text-transform: uppercase;
+    *font-size: 2.4rem;
+    *color: $color;
+    *letter-spacing: 10px;
+    *background-color: black;
+
+    *@if  $border-radius{ //! Asi se utiliza el If.
+       *border-radius: 1rem;
+    *}
+*}
+*/
+
+
+@mixin phone {
+    @media (min-width: v.$phone) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content; //! El content lo que hace es que todo el código que pongas, se inyecta automáticamente en el content.
+    }
+}
+@mixin desktop  {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+@mixin desktopXL  {
+    @media (min-width: v.$desktopXL) {
+        @content;
+    }
+}
+
+@mixin grid($columnas, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
+
+@mixin resetear-lista {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

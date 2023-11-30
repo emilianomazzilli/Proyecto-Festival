@@ -1,0 +1,13 @@
+@use 'base';
+@use 'layout';
+
+//? El import lo que hace es que importa los códigos de diferentes carpetas
+
+// @use compila
+//! Cuando tengas que utilizar una Variable tiene que usar @use.
+
+
+//* Diferencias entre @Import y @Use
+
+//* El @import en scss, lo hace disponible en todos los archivos mientras que ...
+//* @use unicamente donde decidas importarlo
